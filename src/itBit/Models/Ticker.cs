@@ -1,11 +1,13 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace itBit.Models {
+    [DebuggerDisplay("{ToString()}")]
     public class Ticker {
         [JsonProperty("intervalStart")]
         public DateTimeOffset IntervalStart { get; set; }
@@ -45,5 +47,9 @@ namespace itBit.Models {
         
         [JsonProperty("keyexpire")]
         public DateTimeOffset Keyexpire { get; set; }
+
+        public override string ToString() {
+            return (new { Datetime, Symbol, Bid, Ask, Open, High, Low, Close, Volume, Change, IntervalStart, IntervalInMinutes, Keyexpire }).ToString();
+        }
     }
 }

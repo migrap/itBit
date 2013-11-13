@@ -81,6 +81,7 @@
     <Compile Include="Net\Http\Formatting\NewsMediaTypeFormatter.cs" />
     <Compile Include="Net\Http\Formatting\OrderbookMediaTypeFormatter.cs" />
     <Compile Include="Net\Http\Formatting\PriceMediaTypeFormatter.cs" />
+    <Compile Include="Net\Http\Formatting\TickerMediaTypeFormatter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
