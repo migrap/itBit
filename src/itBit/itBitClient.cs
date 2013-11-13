@@ -29,9 +29,7 @@ namespace itBit {
             configure(configurator);
 
             var request = configurator.Build();
-
-            return SendAsync(request)
-                .GetTickerAsync();
+            return SendAsync(request).ReadAsAsync<Ticker, TickerMediaTypeFormatter>();
         }
 
         public Task<News> GetNewsAsync(Action<INewsConfigurator> configure) {
@@ -39,9 +37,7 @@ namespace itBit {
             configure(configurator);
 
             var request = configurator.Build();
-
-            return SendAsync(request)
-                .GetNewsAsync();
+            return SendAsync(request).ReadAsAsync<News, NewsMediaTypeFormatter>();
         }
 
         public Task<Prices> GetPricesAsync(Action<IPriceConfigurator> configure) {
@@ -49,9 +45,7 @@ namespace itBit {
             configure(configurator);
 
             var request = configurator.Build();
-
-            return SendAsync(request)
-                .GetPricesAsync();
+            return SendAsync(request).ReadAsAsync<Prices, PriceMediaTypeFormatter>();
         }
 
         public Task<Orderbook> GetOrderbookAsync(Action<IOrderbookConfigurator> configure) {
@@ -59,9 +53,7 @@ namespace itBit {
             configure(configurator);
 
             var request = configurator.Build();
-
-            return SendAsync(request)
-                .GetOrderbookAsync();
+            return SendAsync(request).ReadAsAsync<Orderbook, OrderbookMediaTypeFormatter>();
         }
     }
 
@@ -70,20 +62,12 @@ namespace itBit {
             return self.GetTickerAsync(x => x.Symbol(symbol));
         }
 
-        internal static Task<Ticker> GetTickerAsync(this Task<HttpResponseMessage> self) {
-            return self.ReadAsAsync<Ticker>(new JsonMediaTypeFormatter());            
+        internal static Task<T> ReadAsAsync<T>(this Task<HttpResponseMessage> self, MediaTypeFormatter formatter) {
+            return self.ReadAsAsync<T>(new MediaTypeFormatter[] { formatter });
         }
 
-        internal static Task<News> GetNewsAsync(this Task<HttpResponseMessage> self) {
-            return self.ReadAsAsync<News>(new NewsMediaTypeFormatter());
-        }
-
-        internal static Task<Prices> GetPricesAsync(this Task<HttpResponseMessage> self) {
-            return self.ReadAsAsync<Prices>(new PriceMediaTypeFormatter());
-        }
-
-        internal static Task<Orderbook> GetOrderbookAsync(this Task<HttpResponseMessage> self) {
-            return self.ReadAsAsync<Orderbook>(new OrderbookMediaTypeFormatter());
+        internal static Task<TResult> ReadAsAsync<TResult, TMediaTypeFormatter>(this Task<HttpResponseMessage> self) where TMediaTypeFormatter : MediaTypeFormatter, new() {
+            return self.ReadAsAsync<TResult>(new MediaTypeFormatter[] { new TMediaTypeFormatter() });
         }
     }
 }
