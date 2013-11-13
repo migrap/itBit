@@ -58,17 +58,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configuration\INewsConfigurator.cs" />
+    <Compile Include="Configuration\IOrderbookConfigurator.cs" />
     <Compile Include="Configuration\IPriceConfigurator.cs" />
     <Compile Include="Configuration\ITickerConfigurator.cs" />
     <Compile Include="Configuration\NewsConfigurator.cs" />
+    <Compile Include="Configuration\OrderbookConfigurator.cs" />
     <Compile Include="Configuration\PriceConfigurator.cs" />
     <Compile Include="Configuration\TickerConfigurator.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="itBitClient.Configuration.cs" />
     <Compile Include="itBitClient.cs" />
     <Compile Include="Models\Headline.cs" />
-    <Compile Include="Models\Market.cs" />
+    <Compile Include="Models\Level.cs" />
     <Compile Include="Models\News.cs" />
+    <Compile Include="Models\Orderbook.cs" />
     <Compile Include="Models\Price.cs" />
     <Compile Include="Models\Prices.cs" />
     <Compile Include="Models\Ticker.cs" />
@@ -76,6 +79,7 @@
     <Compile Include="Net\Http\Configuration\IHttpRequestMessageConfigurator.cs" />
     <Compile Include="Net\Http\Converters\ReadOnlyCollectionConverter.cs" />
     <Compile Include="Net\Http\Formatting\NewsMediaTypeFormatter.cs" />
+    <Compile Include="Net\Http\Formatting\OrderbookMediaTypeFormatter.cs" />
     <Compile Include="Net\Http\Formatting\PriceMediaTypeFormatter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

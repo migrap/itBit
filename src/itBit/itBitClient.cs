@@ -53,6 +53,16 @@ namespace itBit {
             return SendAsync(request)
                 .GetPricesAsync();
         }
+
+        public Task<Orderbook> GetOrderbookAsync(Action<IOrderbookConfigurator> configure) {
+            var configurator = new OrderbookConfigurator();
+            configure(configurator);
+
+            var request = configurator.Build();
+
+            return SendAsync(request)
+                .GetOrderbookAsync();
+        }
     }
 
     public static partial class Extensions {
@@ -70,6 +80,10 @@ namespace itBit {
 
         internal static Task<Prices> GetPricesAsync(this Task<HttpResponseMessage> self) {
             return self.ReadAsAsync<Prices>(new PriceMediaTypeFormatter());
+        }
+
+        internal static Task<Orderbook> GetOrderbookAsync(this Task<HttpResponseMessage> self) {
+            return self.ReadAsAsync<Orderbook>(new OrderbookMediaTypeFormatter());
         }
     }
 }

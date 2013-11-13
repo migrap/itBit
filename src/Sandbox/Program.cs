@@ -15,9 +15,11 @@ namespace Sandbox {
 
             //var ticker = client.GetTickerAsync(x => x.Symbol(?"BTCUSD")).Result;
 
-            var news = client.GetNewsAsync(x => x.Max(1)).Result;
+            //var news = client.GetNewsAsync(x => x.Max(1)).Result;
 
-            var prices = client.GetPricesAsync(x => x.Symbol("BTCUSD")).Result;
+            //var prices = client.GetPricesAsync(x => x.Symbol("BTCUSD")).Result;
+
+            var orderbook = client.GetOrderbookAsync(x => x.Symbol("BTCUSD")).Result;
             Console.ReadLine();
         }
     }

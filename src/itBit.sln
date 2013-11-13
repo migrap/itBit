@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.20623.1 VSUPREVIEW
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "itBit", "itBit\itBit.csproj", "{B8870F18-66DD-4D23-BABA-B543E3C7475A}"
 EndProject
@@ -14,6 +14,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E8CD83
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{B2DDE851-C5C1-4422-9DAA-CE3BA2D906DB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox", "Sandbox\Sandbox.csproj", "{8477256A-8CCA-4551-B585-FC9868BE27D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,11 +26,16 @@ Global
 		{B8870F18-66DD-4D23-BABA-B543E3C7475A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8870F18-66DD-4D23-BABA-B543E3C7475A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8870F18-66DD-4D23-BABA-B543E3C7475A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8477256A-8CCA-4551-B585-FC9868BE27D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8477256A-8CCA-4551-B585-FC9868BE27D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8477256A-8CCA-4551-B585-FC9868BE27D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8477256A-8CCA-4551-B585-FC9868BE27D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{B8870F18-66DD-4D23-BABA-B543E3C7475A} = {B2DDE851-C5C1-4422-9DAA-CE3BA2D906DB}
+		{8477256A-8CCA-4551-B585-FC9868BE27D6} = {B2DDE851-C5C1-4422-9DAA-CE3BA2D906DB}
 	EndGlobalSection
 EndGlobal
